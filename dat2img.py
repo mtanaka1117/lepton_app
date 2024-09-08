@@ -4,7 +4,7 @@ import os
 from more_itertools import peekable
 import glob
 
-DIR_PATH = './img/*.dat'
+DIR_PATH = './img/*/*.dat'
 
 file_list = peekable(sorted(glob.iglob(DIR_PATH)))
 
