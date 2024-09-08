@@ -51,5 +51,6 @@ for i, file in enumerate(file_list):
         material.append(data[coord_x][coord_y])
 
 fig = plt.figure()
-plt.plot(material)
+material = pd.Series(material)
+plt.plot(material.rolling(10).mean())
 plt.show()
