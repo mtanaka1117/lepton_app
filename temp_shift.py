@@ -43,14 +43,18 @@ path = os.path.join(DIR_PATH, args.material, "*.dat")
 file_list = peekable(sorted(glob.iglob(path)))
 
 material = []
+background = []
 
 for i, file in enumerate(file_list):
     with open(file, "rb") as f:
         img_binary = f.read()
         data = np.frombuffer(img_binary, dtype=np.uint16).reshape([120, 160])/100 - 273.15
-        material.append(data[coord_x][coord_y])
+        material.append(np.mean(data))
+        # material.append(data[coord_x][coord_y])
+        # background.append(data[119][159])
 
 fig = plt.figure()
-material = pd.Series(material)
-plt.plot(material.rolling(10).mean())
+# material = pd.Series(material)
+plt.plot(material)
+# plt.plot(background)
 plt.show()
