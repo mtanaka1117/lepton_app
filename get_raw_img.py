@@ -31,10 +31,6 @@ if args.mode == "test":
             # 16bit to 8bit
             img = raw_to_8bit(img)
             
-            # img = img.astype(np.uint16).reshape([120, 160])/100 - 273.15
-            # img = 255.0*(img - TEMP_MIN)/(TEMP_MAX - TEMP_MIN)
-            # img = img.astype(np.uint8)
-            
             img_col = cv2.applyColorMap(img.astype(np.uint8), cv2.COLORMAP_INFERNO)
             img_col = cv2.resize(img_col, (480, 360))
             cv2.imshow('Lepton', img_col.astype(np.uint8))
@@ -58,9 +54,6 @@ if args.mode == "capture":
                 f.write(img)
             
             img = raw_to_8bit(img)
-            # img = img.astype(np.uint16).reshape([120, 160])/100 - 273.15
-            # img = 255.0*(img - TEMP_MIN)/(TEMP_MAX - TEMP_MIN)
-            # img = img.astype(np.uint8)
             
             img_col = cv2.applyColorMap(img.astype(np.uint8), cv2.COLORMAP_INFERNO)
             img_col = cv2.resize(img_col, (480, 360))
