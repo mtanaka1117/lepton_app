@@ -12,7 +12,8 @@ def raw_to_8bit(data):
 
 SAVE_FLAG = False
 # TODAY = dt.date.today().strftime("%m%d")
-SAVE_DIR = './img/'
+# SAVE_DIR = './img/'
+SAVE_DIR = './test/'
 
 # TEMP_MIN = 0.0
 # TEMP_MAX = 60.0
