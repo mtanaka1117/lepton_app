@@ -10,16 +10,10 @@ def raw_to_8bit(data):
     np.right_shift(data, 8, data)
     return cv2.cvtColor(np.uint8(data), cv2.COLOR_GRAY2RGB)
 
-SAVE_FLAG = False
-# TODAY = dt.date.today().strftime("%m%d")
-# SAVE_DIR = './img/'
-SAVE_DIR = './test/'
-
-# TEMP_MIN = 0.0
-# TEMP_MAX = 60.0
+SAVE_DIR = './img/'
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--material")
+parser.add_argument("--number")
 parser.add_argument("--mode")
 args = parser.parse_args()
 
@@ -43,7 +37,7 @@ if args.mode == "test":
 
     
 if args.mode == "capture":
-    path = os.path.join(SAVE_DIR, args.material)
+    path = os.path.join(SAVE_DIR, args.number)
     os.makedirs(path, exist_ok=True)
     
     with Lepton() as camera:

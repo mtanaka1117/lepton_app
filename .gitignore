@@ -2,3 +2,5 @@ img/*
 *.mp4
 cropped_img/*
 test/*
+test_dataset/*
+img_test/*
