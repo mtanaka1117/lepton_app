@@ -3,3 +3,4 @@ img/*
 cropped_img/*
 test/*
 test_dataset/*
+finetune_dataset/*

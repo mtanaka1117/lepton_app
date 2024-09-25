@@ -21,10 +21,7 @@ def get_coord(path):
     cv2.setMouseCallback('img', onMouse)
     cv2.waitKey(0)
 
-
-# path = "./img/wall/20240908_202435731.jpg"
 path = "./img/cloth_wall/20240909_154733398.jpg"
-# path = "./img/cloth_wall_cold/20240909_160350701.jpg"
 
 get_coord(path)
 coord_x, coord_y = coord[0]
