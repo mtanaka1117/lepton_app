@@ -34,17 +34,18 @@ def centralize_and_resize(image_path, output_size=(28, 28), min_digit_size=5):
     return canvas
 
 
-INPUT_DIR = './test_dataset/6'
-OUTPUT_DIR = './test/6/'
+INPUT_DIR = './test/4'
+OUTPUT_DIR = './swap/4'
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 for img in glob.glob(INPUT_DIR + '/*.jpg'):
     resized_img = centralize_and_resize(img)
     
-    match = re.search(r'./test_dataset/(\d)[\\/](\d{8}_\d{9})\.jpg', img)
+    match = re.search(r'./test/(\d)[\\/](\d{8}_\d{9})\.jpg', img)
     if match:
         _path = f'{match.group(2)}'
+        os.makedirs(os.path.join('./swap/', match.group(1)), exist_ok=True)
         output_path = os.path.join(OUTPUT_DIR, _path + '.jpg')
     else:
         print('Not match')

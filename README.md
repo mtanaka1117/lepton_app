@@ -14,7 +14,7 @@ pip install flirpy
 
 ## About Lepton
 Lepton captures a 16-bit (raw) image.  
-The value of DAT file is divided by 100 and subtracted by 273.15 to obtain the Celsius temperature.
+The value of DAT file is divided by 100 and subtracted by 273.15 to obtain the Celsius temperature.  
 ```value / 100.0 - 273.15```
 
 
@@ -28,13 +28,14 @@ python3 .\get_raw_img.py --mode (test/capture) --output_path YOUR_OUTPUT_PATH
 ```
 
 2. dat2img.py  
-This program converts *.dat to *.jpg  
+Converts *.dat to *.jpg  
 ```
 python3 .\dat2img.py --path YOUR_DATFILE_PATH
 ```
 
 3. mnist_crop.py  
-Crop images to mnist input image size.  
+Crop images to mnist input image size (28×28).  
+The original image contains a lot of noise, so this code performs noise filtering and masking.
 ```
 python3 .\mnist_crop.py
 ```
