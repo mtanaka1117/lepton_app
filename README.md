@@ -45,3 +45,9 @@ This program centers the numbers and enlarges them if they are small.
 ```
 python3 .\centralize.py
 ```
+
+
+## References
+[Lepton Integration with Windows](https://www.flir.in/developer/lepton-integration/lepton-integration-windows/)  
+[FLIRPY](https://github.com/LJMUAstroecology/flirpy)
+
